@@ -24,7 +24,13 @@ namespace AgrcPasswordManagement.Models.Account
         [Required]
         public string Application
         {
-            get { return _application.ToLower(); }
+            get
+            {
+                if (_application == null || string.IsNullOrEmpty(_application))
+                    return null;
+                
+                return _application.ToLower();
+            }
             set
             {
                 if (value == null || string.IsNullOrEmpty(value))

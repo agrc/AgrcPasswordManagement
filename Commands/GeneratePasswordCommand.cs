@@ -27,7 +27,7 @@ namespace AgrcPasswordManagement.Commands
             var output = String.Empty;
 
             var rnd = new Random();
-            const int max = 4;
+            const int max = 3;
 
             for (var index = 0; index < Length; index++)
             {
@@ -56,15 +56,6 @@ namespace AgrcPasswordManagement.Commands
                     case 3:
                         // the numbers, 0 to 9
                         output += rnd.Next(0, 10).ToString(CultureInfo.InvariantCulture);
-                        
-                        break;
-                    case 4:
-                        // the symbols, 33 to 47
-                        var symbol = (Byte) rnd.Next(33, 47);
-                        output += Encoding.ASCII.GetString(new[]
-                        {
-                            symbol
-                        });
                         
                         break;
                     default:
